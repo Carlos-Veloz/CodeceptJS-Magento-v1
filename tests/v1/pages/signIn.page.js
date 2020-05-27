@@ -1,33 +1,49 @@
 const I = actor();
 
 module.exports = {
+    fields: {
+        header: 'LOGIN OR CREATE AN ACCOUNT',
+        createAccount: 'CREATE AN ACCOUNT',
+        firstname: 'firstname',
+        lastname: 'lastname',
+        email: 'email',
+        password: 'password',
+        confirmation: 'confirmation',
+        
+        username: 'login[username]',
+        pwd: 'login[password]',
+
+        register: 'REGISTER',
+        login: 'LOGIN'
+    },
+
     goto() {
         I.amOnPage('/customer/account/login/')
     },
 
     validateHeader() {
-        I.see('LOGIN OR CREATE AN ACCOUNT')
+        I.see(this.fields.header)
     },
 
     createAccount() {
-        I.click('CREATE AN ACCOUNT')
+        I.click(this.fields.createAccount)
     },
 
     fillFields() {
-        I.fillField('firstname', 'Test')
-        I.fillField('lastname', 'User')
-        I.fillField('email', 'testuser@fake.com')
-        I.fillField('password', secret('1234567'))
-        I.fillField('confirmation', secret('1234567'));
+        I.fillField(this.fields.firstname, 'Test')
+        I.fillField(this.fields.lastname, 'User')
+        I.fillField(this.fields.email, 'testuser@fake.com')
+        I.fillField(this.fields.password, secret('1234567'))
+        I.fillField(this.fields.confirmation, secret('1234567'));
     },
 
     register() {
-        I.click('REGISTER')
+        I.see(this.fields.register)
     },
 
     enterCredentials(user, pwd) {
-        I.fillField('login[username]', user)
-        I.fillField('login[password]', secret(pwd))
-        I.click('LOGIN')
+        I.fillField(this.fields.username, user)
+        I.fillField(this.fields.pwd, secret(pwd))
+        I.click(this.fields.login)
     }
 }

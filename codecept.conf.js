@@ -8,22 +8,24 @@ exports.config = {
   output: './output',
   helpers: {
     TestCafe: {
-      url: 'http://localhost',
+      url: 'http://34.221.169.243',
       browser: 'chrome',
       show: true
     }
   },
   include: {
-    HomePage: `./${TestBaseDirectory}/pages/home.page.js`,
+    HomePage: `./${TestBaseDirectory}/v1/pages/home.page.js`,
+    SignIn: `./${TestBaseDirectory}/v1/pages/signIn.page.js`,
+    Index: `./${TestBaseDirectory}/v1/pages/index.page.js`
   },
   bootstrap: null,
   mocha: {},
   plugins: {
     retryFailedStep: {
-      enabled: true
+      enabled: false
     },
     screenshotOnFail: {
-      enabled: true
+      enabled: false
     }
   }
 }

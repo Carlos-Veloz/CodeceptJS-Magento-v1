@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:home": "npx codeceptjs run"
+    "test:e2e": "npx codeceptjs run",
+    "test:logIn": "npx codeceptjs run tests/v1/checkout_ft.test.js"
   },
   "keywords": [],
   "author": "",

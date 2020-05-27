@@ -1,26 +1,22 @@
 const I = actor();
 
 module.exports = {
+    fields: {
+        welcome: 'p.welcome-msg',
+        wrapper: 'div.account-cart-wrapper',
+        account: 'ACCOUNT'
+    },
+    
     goto() {
         I.amOnPage('/') //v1
     },
 
-    enterSearch(item) {
-        I.fillField('q', item)
-        I.pressKey('Enter')
-    },
-
-    resultsSearch() {
-        I.see('1 Item(s)')
-    },
-
     seeAccountWrapper() {
-        I.see('DEFAULT WELCOME MSG!', 'p.welcome-msg')
-        I.seeElement('div.account-cart-wrapper')
+        I.seeElement(this.fields.wrapper)
     },
 
     validateAccountOptions() {
-        I.click('ACCOUNT')
+        I.click(this.fields.account)
         I.see('My Account')
         I.see('My Wishlist')
         I.see('My Cart')
@@ -29,7 +25,7 @@ module.exports = {
     },
 
     clickLogin() {
-        I.click('ACCOUNT')
+        I.click(this.fields.account)
         I.click('Log In')
     }
     
