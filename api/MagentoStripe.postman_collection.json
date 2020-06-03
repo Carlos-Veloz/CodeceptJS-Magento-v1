@@ -117,7 +117,7 @@
 									"const jsonResponse = pm.response.json();",
 									"",
 									"pm.test(\"Purchase was created successfully!\", function () {",
-									"    pm.expect(jsonResponse.data[1].description).to.contains(orderNum);",
+									"    pm.expect(jsonResponse.data[0].description).to.contains(orderNum);",
 									"});",
 									"",
 									"// pm.test(\"Purchase was created successfully!\", function () {",
