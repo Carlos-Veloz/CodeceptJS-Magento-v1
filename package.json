@@ -12,6 +12,9 @@
   "license": "ISC",
   "devDependencies": {
     "codeceptjs": "^2.6.5",
+    "dotenv": "^8.2.0",
+    "newman": "^5.0.1",
     "testcafe": "^1.8.5"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "e84e1938-a70a-40c2-b545-216e7921e9c2",
+		"name": "MagentoStripe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MagentoV1",
+			"item": [
+				{
+					"name": "http://34.221.169.243/api/rest/products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b1dfbe30-8a50-417d-a7f7-6804e6c07422",
+								"exec": [
+									"let orden = pm.variables.get(\"orden\");",
+									"console.log(orden);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "471b59eb30b7bb6eaa0294c0f771e0da",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "5ba3a160877a110aa65e2bbde1115a25",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "7434c3ee34843a40854eb79fa2ac8020",
+									"type": "string"
+								},
+								{
+									"key": "tokenSecret",
+									"value": "fab6bcaaeb35e01a0ed1613db36706d7",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.221.169.243/api/rest/products",
+							"protocol": "http",
+							"host": [
+								"34",
+								"221",
+								"169",
+								"243"
+							],
+							"path": [
+								"api",
+								"rest",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MagentoV2",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Stripe",
+			"item": [
+				{
+					"name": "https://api.stripe.com/v1/charges",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_zptpkIWpzGMFBgVTLDIBms2Y00TQvmAXfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.stripe.com/v1/charges/:id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"stripe",
+								"com"
+							],
+							"path": [
+								"v1",
+								"charges",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ch_1GpdzWGEGYy6BKwO1WNTGBz3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
