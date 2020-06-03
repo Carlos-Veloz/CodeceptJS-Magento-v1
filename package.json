@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:e2e": "npx codeceptjs run",
-    "test:logIn": "npx codeceptjs run tests/v1/checkout_ft.test.js"
+    "test:logIn": "npx codeceptjs run tests/v1/checkout_ft.test.js",
+    "api:stripe": "newman run api/MagentoStripe.postman_collection.json --env-var order=$ORDER"
   },
   "keywords": [],
   "author": "",
