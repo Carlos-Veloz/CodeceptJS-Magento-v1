@@ -27,7 +27,7 @@ module.exports = {
         let pin = await I.grabTextFrom('td.number');
         let aux = pin[0]
         updateDotenv({
-            LATEST_ORDER: aux
+            ORDER: aux
         })
     }
 }

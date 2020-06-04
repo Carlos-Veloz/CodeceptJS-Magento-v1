@@ -103,6 +103,39 @@
 			"item": [
 				{
 					"name": "https://api.stripe.com/v1/charges",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "92583dff-34fc-45be-a841-1c0e9d3f173f",
+								"exec": [
+									"//Tests using response data",
+									"",
+									"let orderNum = pm.variables.get(\"order\");",
+									"//let orderNum = \"000000014\";",
+									"",
+									"const jsonResponse = pm.response.json();",
+									"",
+									"pm.test(\"Purchase was created successfully!\", function () {",
+									"    pm.expect(jsonResponse.data[0].description).to.contains(orderNum);",
+									"});",
+									"",
+									"// pm.test(\"Purchase was created successfully!\", function () {",
+									"//     pm.expect(jsonResponse.description).to.contains(orderNum);",
+									"// });",
+									"",
+									"// pm.test(\"Purchase was created successfully!\", function () {",
+									"//     pm.expect(jsonResponse.metadata[\"Order #\"]).to.equal(orderNum);",
+									"// });",
+									"",
+									"pm.environment.set(\"orderId\", jsonResponse.id);",
+									"",
+									"//\"id\": \"ch_1GpdzWGEGYy6BKwO1WNTGBz3\""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -117,7 +150,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.stripe.com/v1/charges/:id",
+							"raw": "https://api.stripe.com/v1/charges",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -126,14 +159,7 @@
 							],
 							"path": [
 								"v1",
-								"charges",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "ch_1GpdzWGEGYy6BKwO1WNTGBz3"
-								}
+								"charges"
 							]
 						}
 					},
