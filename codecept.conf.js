@@ -10,7 +10,7 @@ exports.config = {
     TestCafe: {
       url: 'http://34.221.169.243',
       browser: 'chrome',
-      show: true
+      show: false
     }
   },
   include: {
