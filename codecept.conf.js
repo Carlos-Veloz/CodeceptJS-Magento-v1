@@ -16,7 +16,10 @@ exports.config = {
   include: {
     HomePage: `./${TestBaseDirectory}/v1/pages/home.page.js`,
     SignIn: `./${TestBaseDirectory}/v1/pages/signIn.page.js`,
-    Index: `./${TestBaseDirectory}/v1/pages/index.page.js`
+    Index: `./${TestBaseDirectory}/v1/pages/index.page.js`,
+    Cart: `./${TestBaseDirectory}/v1/pages/cart.page.js`,
+    Checkout: `./${TestBaseDirectory}/v1/pages/checkout.page.js`,
+    Success: `./${TestBaseDirectory}/v1/pages/success.page.js`
   },
   bootstrap: null,
   mocha: {},

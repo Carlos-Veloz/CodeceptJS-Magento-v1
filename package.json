@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test:e2e": "npx codeceptjs run",
-    "test:logIn": "npx codeceptjs run tests/v1/checkout_ft.test.js"
+    "test:checkout": "npx codeceptjs run tests/v1/home_ft.test.js",
+    "test:logIn": "npx codeceptjs run tests/v1/logIn_ft.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "codeceptjs": "^2.6.5",
+    "codeceptjs": "2.6.5",
     "dotenv": "^8.2.0",
-    "newman": "^5.0.1",
-    "testcafe": "^1.8.5"
+    "newman": "5.0.1",
+    "testcafe": "1.8.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "update-dotenv": "^1.1.1"
+  }
 }

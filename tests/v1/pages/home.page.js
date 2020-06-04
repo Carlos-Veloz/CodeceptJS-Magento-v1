@@ -4,7 +4,11 @@ module.exports = {
     fields: {
         welcome: 'p.welcome-msg',
         wrapper: 'div.account-cart-wrapper',
-        account: 'ACCOUNT'
+        account: 'ACCOUNT',
+        search: 'q',
+        add: 'ADD TO CART',
+        item: 'VINTAGE SHOES',
+        qty: 'qty'
     },
     
     goto() {
@@ -27,6 +31,18 @@ module.exports = {
     clickLogin() {
         I.click(this.fields.account)
         I.click('Log In')
+    },
+
+    searchItem(item) {
+        I.fillField(this.fields.search, item)
+        I.pressKey('Enter')
+        I.click(this.fields.item)
+    },
+
+    addToCart() {
+        I.clearField(this.fields.qty)
+        I.fillField(this.fields.qty, '2')
+        I.click(this.fields.add)
     }
     
 }
