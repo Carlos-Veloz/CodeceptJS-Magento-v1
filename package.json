@@ -7,7 +7,7 @@
     "test:e2e": "npx codeceptjs run",
     "test:checkout": "npx codeceptjs run tests/v1/checkout_ft.test.js",
     "test:logIn": "npx codeceptjs run tests/v1/logIn_ft.test.js",
-    "api:stripe": "newman run api/MagentoStripe.postman_collection.json --env-var order=$ORDER"
+    "api:stripe": "newman run api/MagentoStripe.postman_collection.json -e api/MagentoStripeEnv.postman_environment.json --env-var order=$ORDER"
   },
   "keywords": [],
   "author": "",

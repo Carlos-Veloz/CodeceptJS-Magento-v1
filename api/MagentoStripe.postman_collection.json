@@ -155,7 +155,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "sk_test_zptpkIWpzGMFBgVTLDIBms2Y00TQvmAXfg",
+									"value": "{{StripeToken}}",
 									"type": "string"
 								}
 							]
